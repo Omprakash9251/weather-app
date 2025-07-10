@@ -1,0 +1,138 @@
+:root {
+  --background-color: #f0f2f5;
+  --text-color: #222;
+  --card-background: rgba(255, 255, 255, 0.85);
+  --accent-color: #0077ff;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --card-background: rgba(44, 44, 44, 0.85);
+  --accent-color: #1e90ff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 1rem;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.container {
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  outline: none;
+  background-color: white;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+}
+
+.search-button:active {
+  opacity: 0.9;
+}
+
+.current-weather,
+.forecast {
+  margin-top: 2rem;
+}
+
+.forecast {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.forecast-day {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background: var(--card-background);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.text-black {
+  color: black;
+}
+.text-white {
+  color: white;
+}
+
+@media (max-width: 764px) {
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-input {
+    flex: 2;
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  .search-button {
+    flex: 1;
+  }
+
+  .forecast {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .forecast-day {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .forecast-day img {
+    width: 60px;
+    height: auto;
+  }
+}

@@ -10,12 +10,13 @@ export default function CityWeather() {
   const [forecast, setForecast] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const city = cityName || "Vadodara";
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const weatherData = await fetchCurrentWeather(cityName);
-        const forecastData = await fetchForecast(cityName);
+        const weatherData = await fetchCurrentWeather(city);
+        const forecastData = await fetchForecast(city);
         setWeatherData(weatherData);
         setForecast(forecastData);
         setLoading(false);
@@ -25,7 +26,7 @@ export default function CityWeather() {
       }
     };
     getData();
-  }, [cityName]);
+  }, [city]);city
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>City Not Found</p>;

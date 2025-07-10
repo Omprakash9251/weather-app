@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Search from "../components/Search";
 import ThemeChange from "../components/ThemeChange";
 import { fetchCurrentWeather, fetchForecast } from "../api/axios";
@@ -29,6 +29,10 @@ export default function Home() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    handleCitySearch("Vadodara");
+  }, []);
 
   return (
     <>

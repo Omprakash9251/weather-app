@@ -17,7 +17,7 @@ export default function ThemeChange() {
         onClick={() => setMode(!mode)}
         className={`icon ${mode ? "text-white" : "text-black"}`}
       >
-        {mode ? <FiMoon className="icon" /> : <FiSun className="icon" />}
+        {mode ? <FiSun /> : <FiMoon />}
       </button>
     </div>
   );
